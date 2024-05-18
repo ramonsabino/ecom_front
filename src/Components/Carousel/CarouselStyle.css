@@ -1,0 +1,11 @@
+.carousel-container {
+  width: 100%;
+  max-width: 1200px; /* Altere conforme necessário */
+  margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+}
+
+.carousel .slide img {
+  height: 250px; /* Ajuste a altura para metade (anteriormente era 500px) */
+  width: 350px;
+  object-fit: cover; /* Ajusta a imagem para cobrir todo o contêiner */
+}
