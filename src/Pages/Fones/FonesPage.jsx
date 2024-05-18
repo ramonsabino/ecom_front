@@ -1,14 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import FiltroMenu from '../../Components/FiltroMenu/FiltroMenu';  // Componente do menu de filtro
-import PeliculaCard from '../../Components/Cards/PeliculaCard'; // Componente do cartão de película
-const PeliculasPage = () => {
+import FonesCard from '../../Components/Cards/FonesCard';
+
+const FonesPage = () => {
   // Supondo que você tenha uma lista de películas
-  const peliculas = [
-    { id: 1, nome: 'Pelicula 1', genero: '3D' },
-    { id: 2, nome: 'Pelicula 2', genero: 'Vidro' },
-    { id: 3, nome: 'Pelicula 3', genero: '3D Privacy Vidro' },
-    { id: 4, nome: 'Pelicula 4', genero: '3D Privacy Cerâmica' },
+  const fones = [
+    { id: 1, nome: 'AirDots Xiaomi', tipo: 'Sem-fio', imagem: '../../Assets/foneAirDots.jpg'},
+    { id: 2, nome: 'Fone HRebos Iphone', tipo: 'iOS', imagem: '../../Assets/foneHrebosIos.jpg' },
+    { id: 3, nome: 'Fone Lehmox Iphone', tipo: 'Com Fio', imagem: '../../Assets/foneLehmox.jpg' },
 
     // Adicione mais películas conforme necessário
   ];
@@ -24,9 +24,9 @@ const PeliculasPage = () => {
         <Grid item xs={9}>
           <Grid container spacing={3}>
             {/* Mapeia cada película para um cartão */}
-            {peliculas.map(pelicula => (
-              <Grid key={pelicula.id} item xs={4}>
-                <PeliculaCard pelicula={pelicula} />
+            {fones.map(fones => (
+              <Grid key={fones.id} item xs={4}>
+                <FonesCard fones={fones} />
               </Grid>
             ))}
           </Grid>
@@ -36,4 +36,4 @@ const PeliculasPage = () => {
   );
 };
 
-export default PeliculasPage;
+export default FonesPage;

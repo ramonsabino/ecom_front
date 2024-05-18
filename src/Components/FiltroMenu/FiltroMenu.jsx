@@ -16,9 +16,9 @@ const FiltroMenu = () => {
   // Exemplo de opções de filtro
   const opcoesFiltro = [
     { id: 1, nome: 'Todos' },
-    { id: 2, nome: 'Ação' },
-    { id: 3, nome: 'Comédia' },
-    { id: 4, nome: 'Drama' },
+    { id: 2, nome: '3D' },
+    { id: 3, nome: 'Vidro' },
+    { id: 4, nome: 'Privacy' },
     // Adicione mais opções de filtro conforme necessário
   ];
 

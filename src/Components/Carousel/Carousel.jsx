@@ -7,7 +7,7 @@ const CarouselComponent = () => {
   return (
     <Carousel autoPlay infiniteLoop showThumbs={false} showArrows={false}>
       <div>
-        <img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1" />
+        <img src="https://www.instagram.com/lrcases.store/p/CdGuCrpus7p/" alt="Slide 1" />
       </div>
       <div>
         <img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2" />

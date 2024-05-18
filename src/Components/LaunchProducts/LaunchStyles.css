@@ -1,0 +1,7 @@
+.grid {
+    width: 100%;
+    max-width: 1200px; /* Altere conforme necessário */
+    margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+    color: #FFF
+  }
+  

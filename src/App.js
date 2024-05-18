@@ -4,6 +4,8 @@ import Navbar from './Components/Navbar/Navbar';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Home from './Pages/Home/Home';
 import PeliculasPage from './Pages/Peliculas/PeliculaPage';
+import CarregadoresPage from './Pages/Carregadores/CarregadoresPage';
+import FonesPage from './Pages/Fones/FonesPage';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,8 +30,8 @@ function App() {
               <Route path="/carrinho"  />
               <Route path="/login"  />
               <Route path="/peliculas"  element={<PeliculasPage />}/>
-              <Route path="/carregadores"  />
-              <Route path="/fones-de-ouvido"  />
+              <Route path="/carregadores" element={<CarregadoresPage />} />
+              <Route path="/fones-de-ouvido" element={<FonesPage />}  />
               <Route path="/smartwatch"  />
               <Route path="/caixas-de-som" />
             </Routes>
