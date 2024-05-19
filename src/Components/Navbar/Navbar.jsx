@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import '../Navbar/Navbar.css'
-import iconLr from '../../Components/Assets/IconLR.png'
+import iconLr from '../../Assets/IconLR.png'
 
 const Navbar = ({ onMenuToggle }) => {
   return (

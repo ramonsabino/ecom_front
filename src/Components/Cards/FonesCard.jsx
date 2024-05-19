@@ -1,26 +1,39 @@
-import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import { CardMedia } from '@material-ui/core';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardMedia, CardContent, Typography, Grid, IconButton } from '@material-ui/core';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { CartContext } from '../../Context/CartContext';
 
 const FonesCard = ({ fones }) => {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <Card>
-       <CardMedia
+      <CardMedia
         component="img"
         alt={fones.nome}
         height="200"
         image={fones.imagem}
         title={fones.nome}
+        style={{ objectFit: 'contain' }}
       />
       <CardContent>
         <Typography variant="h5" component="h2">
           {fones.nome}
         </Typography>
-        <Typography color="textSecondary">
-          Tipo: {fones.tipo}
+        <Typography variant="body2" color="textSecondary" component="p">
+          {fones.tipo}
         </Typography>
+        <Grid container justify="space-between" alignItems="center">
+          <Grid item>
+            <IconButton color="inherit" onClick={() => addToCart(fones)}>
+              <ShoppingCartIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <Link to={`/produto/${fones.id}`}>Ver detalhes</Link>
+          </Grid>
+        </Grid>
       </CardContent>
     </Card>
   );
