@@ -11,7 +11,7 @@ const PeliculaCard = ({ pelicula }) => {
           {pelicula.nome}
         </Typography>
         <Typography color="textSecondary">
-          Gênero: {pelicula.genero}
+          Tipo: {pelicula.genero}
         </Typography>
       </CardContent>
     </Card>

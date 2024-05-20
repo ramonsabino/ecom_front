@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { Container, Typography, Card, CardMedia, CardContent, Grid, IconButton } from '@material-ui/core';
 import { CartContext } from '../../Context/CartContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import airdotsImage from '../../Assets/foneAirDots.jpg';
-import hrebosImage from '../../Assets/foneHrebosIos.jpg';
-import lehmoxImage from '../../Assets/foneLehmox.jpg';
+import airdotsImage from '../../Assets/fones/foneAirDots.jpg';
+import hrebosImage from '../../Assets/fones/foneHrebosIos.jpg';
+import lehmoxImage from '../../Assets/fones/foneLehmox.jpg';
 import SideCart from '../../Components/SideCart/SideCart';
 
 const produtos = [
@@ -65,13 +65,8 @@ const ProductPage = () => {
           </Grid>
         </CardContent>
       </Card>
-      <SideCart 
-        isOpen={isSidebarOpen} 
-        cart={cart} 
-        toggleSidebar={toggleSidebar} 
-        removeFromCart={removeFromCart} 
-        updateQuantity={updateQuantity} 
-      />
+      <SideCart isOpen={isSidebarOpen} cart={cart} onClose={toggleSidebar} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
+
     </Container>
   );
 };

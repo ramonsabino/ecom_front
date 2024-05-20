@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText, IconButton, Typography, Button } from '@material-ui/core';
 import { CartContext } from '../../Context/CartContext';
 import CloseIcon from '@mui/icons-material/Close';
@@ -7,6 +7,16 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const SideCart = ({ isOpen, onClose }) => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
+  const history = useLocation();
+
+  const handleCloseAndStay = () => {
+    onClose();
+  };
+
+  const handleCloseAndContinueShopping = () => {
+    onClose();
+    // Manter a localização atual ao clicar em "Continuar comprando"
+  };
 
   return (
     <Drawer anchor="right" open={isOpen} onClose={onClose}>
@@ -29,7 +39,7 @@ const SideCart = ({ isOpen, onClose }) => {
           ))}
         </List>
         <div style={{ marginTop: '16px' }}>
-          <Button variant="contained" color="primary" onClick={onClose} style={{ marginRight: '8px' }}>
+          <Button variant="contained" color="primary" onClick={handleCloseAndContinueShopping} style={{ marginRight: '8px' }}>
             Continuar comprando
           </Button>
           <Button variant="contained" color="secondary" component={Link} to="/carrinho">

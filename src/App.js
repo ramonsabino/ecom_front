@@ -9,6 +9,9 @@ import FonesPage from './Pages/Fones/FonesPage';
 import ProductPage from './Pages/Products/ProductsPage';
 import SideCart from './Components/SideCart/SideCart';
 import { CartProvider } from './Context/CartContext';
+import CartPage from './Pages/CartPage/CartPage';
+import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
+import CaixasPage from './Pages/CaixasDeSom/CaixasPage';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -36,14 +39,15 @@ function App() {
             <div style={{ flexGrow: 1, padding: '16px' }}>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/carrinho" element={<h1>Oi</h1>} />
+                <Route path="/carrinho" element={<CartPage />} />
                 <Route path="/login" element={<h1>Oi</h1>} />
                 <Route path="/peliculas" element={<PeliculaPage />} />
                 <Route path="/carregadores" element={<CarregadoresPage />} />
                 <Route path="/fones-de-ouvido" element={<FonesPage />} />
                 <Route path="/smartwatch" element={<h1>Oi</h1>} />
-                <Route path="/caixas-de-som" element={<h1>Oi</h1>} />
+                <Route path="/caixas-de-som" element={<CaixasPage />} />
                 <Route path="/produto/:id" element={<ProductPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
               </Routes>
             </div>
             <SideCart isOpen={cartSidebarOpen} onClose={handleCartToggle} />
