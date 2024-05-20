@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Container, Typography, Button, TextField, Grid, Paper, RadioGroup, FormControlLabel, Radio } from '@material-ui/core';
 import { CartContext } from '../../Context/CartContext';
+import PhoneFormat from '../../Utils/PhoneMask';
 
 const CheckoutPage = () => {
   const { cart, removeFromCart } = useContext(CartContext);
@@ -12,6 +13,8 @@ const CheckoutPage = () => {
     email: '',
     telefone: '',
     cep: '',
+    numero: '', // Novo campo para armazenar o número do endereço
+    complemento: '', // Novo campo para armazenar o complemento do endereço
     opcaoEntrega: 'retirada',
     frete: 0,
   });
@@ -19,7 +22,7 @@ const CheckoutPage = () => {
   const tabelaFrete = {
     '60340': 10, // Jardim Iracema
     '60320': 5,  // Padre Andrade
-    '60331': 15, // Barra do Ceará
+    '60330': 15, // Barra do Ceará
     // Adicione outros CEPs e valores conforme necessário
   };
 
@@ -127,9 +130,9 @@ const CheckoutPage = () => {
                   fullWidth
                   margin="normal"
                 />
-                <TextField
+                <Typography variant="subtitle1">Telefone</Typography>
+                <PhoneFormat // Use o componente PhoneFormat para o campo de telefone
                   name="telefone"
-                  label="Telefone"
                   value={formData.telefone}
                   onChange={handleInputChange}
                   fullWidth
@@ -158,6 +161,22 @@ const CheckoutPage = () => {
                       margin="normal"
                       disabled
                     />
+                    <TextField
+                  name="numero" // Campo para o número do endereço
+                  label="Número"
+                  value={formData.numero}
+                  onChange={handleInputChange}
+                  fullWidth
+                  margin="normal"
+                />
+                <TextField
+                  name="complemento" // Campo para o complemento do endereço
+                  label="Complemento"
+                  value={formData.complemento}
+                  onChange={handleInputChange}
+                  fullWidth
+                  margin="normal"
+                />
                     <Typography variant="body1">Frete: R$ {formData.frete}</Typography>
                   </>
                 )}

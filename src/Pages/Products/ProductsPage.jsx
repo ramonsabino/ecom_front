@@ -1,24 +1,23 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Card, CardMedia, CardContent, Grid, IconButton } from '@material-ui/core';
 import { CartContext } from '../../Context/CartContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import airdotsImage from '../../Assets/fones/foneAirDots.jpg';
-import hrebosImage from '../../Assets/fones/foneHrebosIos.jpg';
-import lehmoxImage from '../../Assets/fones/foneLehmox.jpg';
 import SideCart from '../../Components/SideCart/SideCart';
-
-const produtos = [
-  { id: 1, nome: 'AirDots Xiaomi', tipo: 'Sem-fio', descricao: 'Fones bluetooth AirDots com 12h de duração', imagem: airdotsImage },
-  { id: 2, nome: 'Fone HRebos Iphone', tipo: 'iOS', descricao: 'Fone HRebos compatível com dispositivos iOS', imagem: hrebosImage },
-  { id: 3, nome: 'Fone Lehmox Iphone', tipo: 'Com Fio', descricao: 'Fone Lehmox com fio para iPhone', imagem: lehmoxImage },
-];
+import { lancamento } from '../../Context/ProductContext'; // Importe os produtos do arquivo lancamento.js
 
 const ProductPage = () => {
-  const { id } = useParams();
   const { addToCart, cart, removeFromCart, updateQuantity } = useContext(CartContext);
+  const { id } = useParams();
+  const [produto, setProduto] = useState(null);
+
+  // Busca o produto pelo ID
+  useEffect(() => {
+    const produtoEncontrado = lancamento.find(p => p.id === parseInt(id)); // Use os produtos importados aqui
+    setProduto(produtoEncontrado);
+  }, [id]);
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const produto = produtos.find(p => p.id === parseInt(id));
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -66,7 +65,6 @@ const ProductPage = () => {
         </CardContent>
       </Card>
       <SideCart isOpen={isSidebarOpen} cart={cart} onClose={toggleSidebar} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
-
     </Container>
   );
 };

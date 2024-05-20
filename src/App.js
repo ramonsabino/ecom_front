@@ -12,6 +12,7 @@ import { CartProvider } from './Context/CartContext';
 import CartPage from './Pages/CartPage/CartPage';
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
 import CaixasPage from './Pages/CaixasDeSom/CaixasPage';
+import LoginPage from './Pages/Login/LoginPage';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -40,7 +41,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/carrinho" element={<CartPage />} />
-                <Route path="/login" element={<h1>Oi</h1>} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/peliculas" element={<PeliculaPage />} />
                 <Route path="/carregadores" element={<CarregadoresPage />} />
                 <Route path="/fones-de-ouvido" element={<FonesPage />} />
