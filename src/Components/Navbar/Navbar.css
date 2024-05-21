@@ -3,3 +3,29 @@
     color: inherit;
     margin-right: 16px;
   }
+  .menu-icon {
+    display: none; /* Oculta o MenuIcon por padrão */
+  }
+  
+  .desktop-icons {
+    display: none; /* Oculta os ícones de busca e carrinho por padrão */
+  }
+  
+  /* Exibe o MenuIcon apenas em dispositivos móveis */
+  @media (max-width: 600px) {
+    .menu-icon {
+      display: block; /* Exibe o MenuIcon */
+    }
+  }
+  
+  /* Exibe os ícones de busca e carrinho apenas em dispositivos desktop */
+  @media (min-width: 601px) {
+    .desktop-icons {
+      display: flex; /* Exibe os ícones de busca e carrinho */
+    }
+  
+    /* Estilos adicionais para o Menu em desktop */
+    .desktop-menu {
+      display: none; /* Oculta o conteúdo do menu por padrão */
+    }
+  }

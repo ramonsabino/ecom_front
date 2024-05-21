@@ -21,6 +21,7 @@ const FiltroMenu = () => {
     { id: 4, nome: 'Privacy' },
     // Adicione mais opções de filtro conforme necessário
   ];
+  
 
   return (
     <div className={classes.root}>

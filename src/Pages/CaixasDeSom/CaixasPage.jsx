@@ -6,6 +6,7 @@ import caixaJbl from '../../Assets/caixasDeSom/caixaJbl.jpg'
 import caixaMinifun from '../../Assets/caixasDeSom/caixaMinifun.jpg'
 import caixaLehmox from '../../Assets/caixasDeSom/caixaLehmox.jpg'
 import CaixasCard from '../../Components/Cards/CaixasCard';
+import { Container } from '@material-ui/core';
 
 const CaixasPage = () => {
   // Supondo que você tenha uma lista de películas
@@ -19,25 +20,15 @@ const CaixasPage = () => {
   ];
 
   return (
-    <div>
+    <Container>
       <Grid container spacing={3}>
-        {/* Menu de filtro à esquerda */}
-        <Grid item xs={3}>
-          <FiltroMenu />
-        </Grid>
-        {/* Grid central com as películas */}
-        <Grid item xs={9}>
-          <Grid container spacing={3}>
-            {/* Mapeia cada película para um cartão */}
-            {caixa.map(caixa => (
-              <Grid key={caixa.id} item xs={4}>
-                <CaixasCard caixa={caixa} />
-              </Grid>
-            ))}
+        {caixa.map((caixas) => (
+          <Grid item xs={12} sm={6} md={4} key={caixas.id}>
+            <CaixasCard caixas={caixas} />
           </Grid>
-        </Grid>
+        ))}
       </Grid>
-    </div>
+    </Container>
   );
 };
 

@@ -18,11 +18,11 @@ const Navbar = ({ onMenuToggle }) => {
       <IconButton edge="start" color="inherit" aria-label="menu" onClick={onMenuToggle}>
         <MenuIcon />
       </IconButton>
-      <Typography variant="h6" style={{ flexGrow: 1 }}>
-      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <img src={iconLr} alt="Logo" style={{ height: '100px' }} />
-          </Link>
-      </Typography>
+      <Typography variant="h6" style={{ flexGrow: 1, textAlign: 'center' }}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <img src={iconLr} alt="Logo" style={{ height: '100px' }} />
+            </Link>
+          </Typography>
       <NavLink to='wa.me/5585997651791'>
         <WhatsAppIcon fontSize='large' />
       </NavLink>
